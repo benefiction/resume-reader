@@ -1,0 +1,52 @@
+{
+    "name": "resume-reader",
+    "version": "1.0.0",
+    "description": "",
+    "source": "./public/index.html",
+    "browserslist": "> 0.5%, last 2 versions, not dead",
+    "scripts": {
+        "start": "parcel",
+        "build": "parcel build",
+        "test": "jest \".*.test.tsx\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/benefiction/resume-reader.git"
+    },
+    "author": "Benedikt Villwock",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/benefiction/resume-reader/issues"
+    },
+    "homepage": "https://github.com/benefiction/resume-reader#readme",
+    "devDependencies": {
+        "@babel/preset-env": "^7.16.11",
+        "@babel/preset-react": "^7.16.7",
+        "@babel/preset-typescript": "^7.16.7",
+        "@parcel/transformer-svg-react": "^2.3.0",
+        "@parcel/transformer-typescript-tsc": "^2.3.0",
+        "@testing-library/react": "^12.1.2",
+        "@types/mocha": "^9.1.0",
+        "@types/react": "^17.0.39",
+        "@types/react-dom": "^17.0.11",
+        "jest": "^27.5.1",
+        "parcel": "^2.3.0"
+    },
+    "dependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    },
+    "alias": {
+        "@components/*": "./src/components/$1",
+        "@assets/*": "./public/assets/$1"
+    },
+    "jest": {
+        "testEnvironment": "jsdom",
+        "moduleNameMapper": {
+            "\\.(svg|jpg|webp|ttf|woff|png|gif)$": "<rootDir>/__mocks__/fileTransform.ts"
+        },
+        "transform": {
+            "^.+\\.[jt]sx?$": "babel-jest"
+        }
+    }
+}
