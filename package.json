@@ -7,7 +7,7 @@
     "scripts": {
         "start": "parcel",
         "build": "parcel build",
-        "test": "jest \".*.test.tsx\""
+        "test": "jest \".*.test.(ts|tsx)\""
     },
     "repository": {
         "type": "git",
@@ -38,12 +38,15 @@
     },
     "alias": {
         "@components/*": "./src/components/$1",
-        "@assets/*": "./public/assets/$1"
+        "@assets/*": "./public/assets/$1",
+        "@utils/*": "./src/utils/$1"
     },
     "jest": {
         "testEnvironment": "jsdom",
         "moduleNameMapper": {
-            "\\.(svg|jpg|webp|ttf|woff|png|gif)$": "<rootDir>/__mocks__/fileTransform.ts"
+            "\\.(svg|jpg|webp|ttf|woff|png|gif)$": "<rootDir>/__mocks__/fileTransform.ts",
+            "@assets/(.*)": "<rootDir>/public/assets/$1",
+            "@utils/(.*)": "<rootDir>/src/utils/$1"
         },
         "transform": {
             "^.+\\.[jt]sx?$": "babel-jest"
