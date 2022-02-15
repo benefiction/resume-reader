@@ -7,7 +7,8 @@
     "scripts": {
         "start": "parcel",
         "build": "parcel build",
-        "test": "jest \".*.test.(ts|tsx)\""
+        "test": "jest \".*.test.(ts|tsx)\"",
+        "test:ci": "jest \".*.test.(ts|tsx)\" --coverage --ci"
     },
     "repository": {
         "type": "git",
