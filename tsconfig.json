@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "jsx": "preserve",
+        "resolveJsonModule": true,
+        "incremental": true,
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "types": ["mocha", "jest"],
+        "paths": {
+            "@components/*": ["./src/components/*"],
+            "@assets/*": ["./public/assets/*"],
+            "@utils/*": ["./src/utils/*"]
+        }
+    },
+    "exclude": ["node_modules", "dist"]
+}
