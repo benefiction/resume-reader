@@ -26,6 +26,7 @@
         "@babel/preset-typescript": "^7.16.7",
         "@parcel/transformer-svg-react": "^2.3.0",
         "@parcel/transformer-typescript-tsc": "^2.3.0",
+        "@testing-library/jest-dom": "^5.16.2",
         "@testing-library/react": "^12.1.2",
         "@types/jest": "^27.4.0",
         "@types/mocha": "^9.1.0",
@@ -33,26 +34,35 @@
         "@types/react-dom": "^17.0.11",
         "babel-plugin-css-modules-transform": "^1.6.2",
         "jest": "^27.5.1",
-        "parcel": "^2.3.0"
+        "parcel": "^2.3.0",
+        "postcss": "^8.4.6",
+        "postcss-modules": "^4.3.0"
     },
     "dependencies": {
         "react": "^17.0.2",
-        "react-dom": "^17.0.2"
+        "react-dom": "^17.0.2",
+        "the-new-css-reset": "^1.4.9"
     },
     "alias": {
         "@components/*": "./src/components/$1",
         "@assets/*": "./public/assets/$1",
-        "@utils/*": "./src/utils/$1"
+        "@utils/*": "./src/utils/$1",
+        "@types/*": "./src/types/$1"
     },
     "jest": {
         "testEnvironment": "jsdom",
+        "clearMocks": true,
         "moduleNameMapper": {
             "\\.(svg|jpg|webp|ttf|woff|png|gif)$": "<rootDir>/__mocks__/fileTransform.ts",
             "@assets/(.*)": "<rootDir>/public/assets/$1",
-            "@utils/(.*)": "<rootDir>/src/utils/$1"
+            "@utils/(.*)": "<rootDir>/src/utils/$1",
+            "@components/(.*)": "<rootDir>/src/components/$1"
         },
         "transform": {
             "^.+\\.[jt]sx?$": "babel-jest"
-        }
+        },
+        "setupFilesAfterEnv": [
+            "@testing-library/jest-dom/extend-expect"
+        ]
     }
 }

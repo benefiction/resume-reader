@@ -1,3 +1,4 @@
 {
-    "FOOTER_REPO_NOTICE": "This page is deployed with github actions source can be found here"
+    "FOOTER_REPO_NOTICE": "This page is deployed with github actions source can be found here",
+    "LOADING_TEXT": "Loading..."
 }

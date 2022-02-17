@@ -1,0 +1,29 @@
+:root {
+    /* Sleek and Futuristic */
+    --color-common: #2c3531;
+    --color-accent: #116466;
+    --color-accent-alternate: #d1e8e2;
+    --color-inferior: #d9b08c;
+    --color-inferior-alternate: #ffcb9a;
+
+    /* Gorgeous Contrast */
+    --color-common: #222629;
+    --color-accent: #86c232;
+    --color-accent-alternate: #61892f;
+    --color-inferior: #474b4f;
+    --color-inferior-alternate: #6b6e70;
+
+    --font-size-xs: 0.8rem;
+    --font-size-s: 1rem;
+    --font-size-m: 1.2rem;
+    --font-size-l: 1.4rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2rem;
+
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+
+    --bp-m: 41em;
+    --bp-l: 63em;
+}

@@ -11,6 +11,6 @@ describe('<Footer>', () => {
         const { getByText } = render(<Footer />);
 
         const link = getByText(t('FOOTER_REPO_NOTICE'));
-        expect(link).toBeTruthy();
+        expect(link).toBeInTheDocument();
     });
 });
