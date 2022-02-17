@@ -2,7 +2,7 @@ import { t } from '../translate';
 const mockedText = 'some translation text';
 
 jest.mock(
-    '@assets/translations-en_GB.json',
+    '@/assets/translations-en_GB.json',
     () => ({
         NEW_TRANSLATION: 'mocked text',
     }),

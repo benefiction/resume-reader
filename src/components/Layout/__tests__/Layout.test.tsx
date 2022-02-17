@@ -1,5 +1,5 @@
+import { t } from '@/utils/translate';
 import { render } from '@testing-library/react';
-import { t } from '@utils/translate';
 import * as React from 'react';
 import { Layout } from '../';
 
@@ -7,7 +7,7 @@ const mockFooter: React.FC = jest
     .fn()
     .mockImplementation(() => <div>Mock Footer</div>);
 
-jest.mock('@components/Footer', () => {
+jest.mock('@/components/Footer', () => {
     return {
         Footer: () => mockFooter({}),
     };

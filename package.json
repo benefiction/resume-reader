@@ -44,19 +44,20 @@
         "the-new-css-reset": "^1.4.9"
     },
     "alias": {
-        "@components/*": "./src/components/$1",
-        "@assets/*": "./public/assets/$1",
-        "@utils/*": "./src/utils/$1",
-        "@types/*": "./src/types/$1"
+        "@/components/*": "./src/components/$1",
+        "@/assets/*": "./public/assets/$1",
+        "@/utils/*": "./src/utils/$1",
+        "@/@types/*": "./src/@types/$1"
     },
     "jest": {
         "testEnvironment": "jsdom",
         "clearMocks": true,
         "moduleNameMapper": {
             "\\.(svg|jpg|webp|ttf|woff|png|gif)$": "<rootDir>/__mocks__/fileTransform.ts",
-            "@assets/(.*)": "<rootDir>/public/assets/$1",
-            "@utils/(.*)": "<rootDir>/src/utils/$1",
-            "@components/(.*)": "<rootDir>/src/components/$1"
+            "@/assets/(.*)": "<rootDir>/public/assets/$1",
+            "@/utils/(.*)": "<rootDir>/src/utils/$1",
+            "@/components/(.*)": "<rootDir>/src/components/$1",
+            "@/@types/(.*)": "<rootDir>/src/@types/$1"
         },
         "transform": {
             "^.+\\.[jt]sx?$": "babel-jest"

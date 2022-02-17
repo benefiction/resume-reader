@@ -1,5 +1,5 @@
+import { t } from '@/utils/translate';
 import { render } from '@testing-library/react';
-import { t } from '@utils/translate';
 import * as React from 'react';
 import { Footer } from '../';
 

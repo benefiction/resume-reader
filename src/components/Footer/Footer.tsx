@@ -1,5 +1,5 @@
-import GithubIcon from '@assets/icons/profile_github.svg';
-import { t } from '@utils/translate';
+import GithubIcon from '@/assets/icons/profile_github.svg';
+import { t } from '@/utils/translate';
 import React from 'react';
 
 export const Footer: React.FC = () => {

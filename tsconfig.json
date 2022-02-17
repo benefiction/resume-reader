@@ -15,9 +15,10 @@
             "@testing-library/jest-dom"
         ],
         "paths": {
-            "@components/*": ["./src/components/*"],
-            "@assets/*": ["./public/assets/*"],
-            "@utils/*": ["./src/utils/*"]
+            "@/components/*": ["./src/components/*"],
+            "@/assets/*": ["./public/assets/*"],
+            "@/utils/*": ["./src/utils/*"],
+            "@/@types/*": ["./src/@types/*"]
         }
     },
     "exclude": ["node_modules", "dist"]

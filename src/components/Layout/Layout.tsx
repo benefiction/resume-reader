@@ -1,5 +1,5 @@
-import { Footer } from '@components/Footer';
-import { t } from '@utils/translate';
+import { Footer } from '@/components/Footer';
+import { t } from '@/utils/translate';
 import React from 'react';
 import style from './Layout.module.css';
 import type { LayoutProps } from './Layout.types';

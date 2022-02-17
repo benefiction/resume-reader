@@ -1,4 +1,4 @@
-import en_GB from '@assets/translations-en_GB.json';
+import en_GB from '@/assets/translations-en_GB.json';
 
 export type TranslationKeyType = keyof typeof en_GB;
 
