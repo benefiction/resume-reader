@@ -67,9 +67,6 @@
             "@/mocks/(.*)": "<rootDir>/__mocks__/$1",
             "@/@types/(.*)": "<rootDir>/src/@types/$1"
         },
-        "transform": {
-            "^.+\\.[jt]sx?$": "babel-jest"
-        },
         "setupFilesAfterEnv": [
             "@testing-library/jest-dom/extend-expect"
         ]
