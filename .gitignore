@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+
+# Parcel Artifacts
+.parcel-cache
+dist
+coverage
