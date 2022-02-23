@@ -11,13 +11,18 @@
         "types": [
             "mocha",
             "jest",
+            "node",
             "@testing-library/react",
             "@testing-library/jest-dom"
         ],
+        "lib": ["es2015", "dom"],
         "paths": {
             "@/components/*": ["./src/components/*"],
             "@/assets/*": ["./public/assets/*"],
             "@/utils/*": ["./src/utils/*"],
+            "@/containers/*": ["./src/containers/*"],
+            "@/contexts/*": ["./src/contexts/*"],
+            "@/mocks/*": ["./__mocks__/*"],
             "@/@types/*": ["./src/@types/*"]
         }
     },

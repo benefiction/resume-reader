@@ -1,4 +1,4 @@
-import GithubIcon from '@/assets/icons/profile_github.svg';
+import GithubIcon from '@/assets/profile_github.svg';
 import { t } from '@/utils/translate';
 import React from 'react';
 
