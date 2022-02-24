@@ -39,6 +39,6 @@ jobs:
       - name: Download codeclimate reporter
         run: wget -O cc-reporter https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 && chmod +x cc-reporter
       - name: Prepare code coverage
-        run: ./cc-reporter format-coverage lcov.info -t lcov
+        run: ./cc-reporter format-coverage --debug lcov.info -t lcov
       - name: Upload test coverage
-        run: ./cc-reporter upload-coverage 
+        run: ./cc-reporter upload-coverage --debug
