@@ -1,15 +1,20 @@
+import { MockComponent } from '@/mocks/MockComponent';
 import { t } from '@/utils/translate';
 import { render } from '@testing-library/react';
 import * as React from 'react';
 import { Layout } from '../';
 
-const mockFooter: React.FC = jest
+const mockFooterComponent = jest.fn(() => (
+    <MockComponent contentString={'Mock Footer'} />
+));
     .fn()
     .mockImplementation(() => <div>Mock Footer</div>);
 
 jest.mock('@/components/Footer', () => {
     return {
-        Footer: () => mockFooter({}),
+        Footer: () => mockFooterComponent(),
+    };
+});
     };
 });
 
@@ -18,13 +23,14 @@ describe('<Layout>', () => {
         const { getByText } = render(<Layout />);
         const loadingHint = getByText(t('LOADING_TEXT'));
         expect(loadingHint).toBeInTheDocument();
-        expect(mockFooter).toBeCalledTimes(0);
+        expect(mockFooterComponent).toBeCalledTimes(0);
     });
 
     it('renders the resume layout instead of loader in case of resume data', () => {
         const { queryByText } = render(<Layout resumeData={{}} />);
         const loadingHint = queryByText(t('LOADING_TEXT'));
         expect(loadingHint).not.toBeInTheDocument();
-        expect(mockFooter).toBeCalledTimes(1);
+        expect(mockFooterComponent).toBeCalledTimes(1);
+    });
     });
 });

@@ -1,13 +1,17 @@
 import { ResumeJson } from '@/@types/resume';
 import { ResumeProvider } from '@/contexts/ResumeContext';
+import { MockComponent } from '@/mocks/MockComponent';
 import { MockResumeJsonMin } from '@/mocks/resumeJsonMin';
 import { render } from '@testing-library/react';
 import * as React from 'react';
 import { Resume } from '../Resume';
 
+const layoutSearchString = 'Mock Layout';
 const mockLayoutComponent: React.FC = jest
     .fn()
-    .mockImplementation(() => <div>Mock Layout</div>);
+    .mockImplementation(() => (
+        <MockComponent contentString={layoutSearchString} />
+    ));
 
 const mockFetchFn = jest.fn((callback: (arg0: ResumeJson) => void) =>
     callback(MockResumeJsonMin)
@@ -32,7 +36,7 @@ describe('ResumeProvider', () => {
                 <Resume />
             </ResumeProvider>
         );
-        expect(getByText('Mock Layout')).toBeInTheDocument();
+        expect(getByText(layoutSearchString)).toBeInTheDocument();
 
         expect(mockLayoutComponent).toHaveBeenNthCalledWith(1, {
             isLoading: true,
@@ -46,7 +50,7 @@ describe('ResumeProvider', () => {
                 <Resume />
             </ResumeProvider>
         );
-        expect(getByText('Mock Layout')).toBeInTheDocument();
+        expect(getByText(layoutSearchString)).toBeInTheDocument();
         expect(mockFetchFn).toHaveBeenCalledTimes(1);
         expect(mockLayoutComponent).toHaveBeenNthCalledWith(2, {
             isLoading: false,
