@@ -1,4 +1,5 @@
 import type { ResumeJson } from '@/@types/resume';
+import { customLog } from '@/utils/logger';
 
 const userBaseUrl = 'https://gist.githubusercontent.com/benefiction';
 const defaultResumePath =
@@ -8,20 +9,14 @@ const resumeUrl = `${userBaseUrl}${defaultResumePath}`;
 
 export const fetchResume = async (
     onSuccess: (resumeJson: ResumeJson) => void,
-    onFailure?: (error: string) => void
+    onFailure: (error: string) => void = (error: string) =>
+        customLog('fallback onFailure', error)
 ) => {
-    const handleError = (error: string) =>
-        typeof onFailure === 'function'
-            ? onFailure(error)
-            : console.log('fallback onFailure', error);
-
     try {
         const response = await fetch(resumeUrl);
 
-        if (response.status !== 200) {
-            handleError(`Unexpected Status Code:${response.status}`);
-            return;
-        }
+        if (response.status !== 200)
+            throw new Error(`Unexpected Status Code:${response.status}`);
 
         const json = await response.json();
         onSuccess(json);
@@ -30,6 +25,7 @@ export const fetchResume = async (
             error instanceof Error
                 ? error.message
                 : 'Oops, something went wrong during resume fetching';
-        handleError(errorMessage);
+
+        onFailure(errorMessage);
     }
 };

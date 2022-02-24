@@ -1,7 +1,13 @@
 import { MockResumeJsonMin } from '@/mocks/resumeJsonMin';
 import { fetchResume } from '@/utils/resumeFetcher';
 
-const mockConsoleLog = jest.fn();
+const mockCustomLog = jest.fn();
+
+jest.mock('@/utils/logger', () => {
+    return {
+        customLog: (...params) => mockCustomLog(...params),
+    };
+});
 
 const setMockFetch = (responseCode) => {
     globalThis.fetch = jest.fn(
@@ -29,13 +35,10 @@ describe('fetchResume', () => {
         expect(onFailure).toHaveBeenCalledWith('Unexpected Status Code:418');
     });
 
-    it('should use console.log in case the onFailure callback is missing', async () => {
+    it('should use customLog in case the onFailure callback is missing', async () => {
         setMockFetch(418);
-        globalThis.console.log = jest
-            .fn()
-            .mockImplementationOnce(mockConsoleLog);
         const resume = await fetchResume(onSuccess);
-        expect(mockConsoleLog).toHaveBeenCalledWith(
+        expect(mockCustomLog).toHaveBeenCalledWith(
             'fallback onFailure',
             'Unexpected Status Code:418'
         );
