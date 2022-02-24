@@ -17,7 +17,7 @@ export declare type ResumeJson = {
 export declare type ResumeBasics = {
     name: string;
     label?: string;
-    picture?: string;
+    image?: string;
     email?: string;
     phone?: string;
     website?: string;

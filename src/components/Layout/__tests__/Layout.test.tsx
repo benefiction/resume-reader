@@ -1,4 +1,5 @@
 import { MockComponent } from '@/mocks/MockComponent';
+import { MockResumeJsonMax } from '@/mocks/resumeJsonMax';
 import { t } from '@/utils/translate';
 import { render } from '@testing-library/react';
 import * as React from 'react';
@@ -7,14 +8,23 @@ import { Layout } from '../';
 const mockFooterComponent = jest.fn(() => (
     <MockComponent contentString={'Mock Footer'} />
 ));
+
+const headerSearchString = 'Mock Header';
+const mockHeaderComponent = jest
     .fn()
-    .mockImplementation(() => <div>Mock Footer</div>);
+    .mockImplementation(() => (
+        <MockComponent contentString={headerSearchString} />
+    ));
 
 jest.mock('@/components/Footer', () => {
     return {
         Footer: () => mockFooterComponent(),
     };
 });
+
+jest.mock('@/components/Header', () => {
+    return {
+        Header: (props: any) => mockHeaderComponent(props),
     };
 });
 
@@ -32,5 +42,12 @@ describe('<Layout>', () => {
         expect(loadingHint).not.toBeInTheDocument();
         expect(mockFooterComponent).toBeCalledTimes(1);
     });
+
+    it('renders the resume layout header within the layout', () => {
+        const mockProps = { basics: MockResumeJsonMax.basics };
+        const { queryByText } = render(<Layout resumeData={mockProps} />);
+        const headerComponent = queryByText(headerSearchString);
+        expect(headerComponent).toBeInTheDocument();
+        expect(mockHeaderComponent).toBeCalledWith(mockProps);
     });
 });

@@ -1,4 +1,5 @@
 import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
 import { t } from '@/utils/translate';
 import React from 'react';
 import style from './Layout.module.css';
@@ -14,7 +15,9 @@ export const Layout: React.FC<LayoutProps> = ({
 
     return (
         <div className={style.layout}>
-            <header className={style.header}>header</header>
+            <header className={style.header}>
+                {resumeData?.basics && <Header basics={resumeData.basics} />}
+            </header>
             <main className={style.main}>main</main>
             <aside className={style.aside}>aside</aside>
 
