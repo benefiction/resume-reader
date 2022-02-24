@@ -5,7 +5,7 @@ import style from './Footer.module.css';
 
 export const Footer: React.FC = () => {
     return (
-        <div>
+        <div className={style.wrapper}>
             <a href='https://github.com/benefiction/resume-reader'>
                 <img className={style.link_icon} src={GithubIcon} />
                 {t('FOOTER_REPO_NOTICE')}

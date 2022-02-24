@@ -1,5 +1,10 @@
+.wrapper {
+    text-align: center;
+    padding: 3rem;
+}
+
 .link_icon {
-    display: inline-block;
-    height: 2rem;
+    height: 1rem;
     width: auto;
+    margin: 0 0.3rem 0 0;
 }
