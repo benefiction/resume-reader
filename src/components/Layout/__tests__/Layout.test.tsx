@@ -5,23 +5,16 @@ import { render } from '@testing-library/react';
 import * as React from 'react';
 import { Layout } from '../';
 
+const mockWithJest = (text) =>
+    jest.fn().mockImplementation(() => <MockComponent contentString={text} />);
+
 const headerSearchString = 'Mock Header';
-const mockHeaderComponent = jest
-    .fn()
-    .mockImplementation(() => (
-        <MockComponent contentString={headerSearchString} />
-    ));
+const mockHeaderComponent = mockWithJest(headerSearchString);
 
 const summarySectionString = 'Mock Summary Section Text';
-const mockSectionSummaryComponent = jest
-    .fn()
-    .mockImplementation(() => (
-        <MockComponent contentString={summarySectionString} />
-    ));
+const mockSectionSummaryComponent = mockWithJest(summarySectionString);
 
-const mockFooterComponent = jest.fn(() => (
-    <MockComponent contentString={'Mock Footer'} />
-));
+const mockFooterComponent = mockWithJest('Mock Footer');
 
 jest.mock('@/components/Header', () => {
     return {
