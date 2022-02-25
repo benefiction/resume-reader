@@ -5,10 +5,6 @@ import { render } from '@testing-library/react';
 import * as React from 'react';
 import { Layout } from '../';
 
-const mockFooterComponent = jest.fn(() => (
-    <MockComponent contentString={'Mock Footer'} />
-));
-
 const headerSearchString = 'Mock Header';
 const mockHeaderComponent = jest
     .fn()
@@ -16,15 +12,32 @@ const mockHeaderComponent = jest
         <MockComponent contentString={headerSearchString} />
     ));
 
-jest.mock('@/components/Footer', () => {
-    return {
-        Footer: () => mockFooterComponent(),
-    };
-});
+const summarySectionString = 'Mock Summary Section Text';
+const mockSectionSummaryComponent = jest
+    .fn()
+    .mockImplementation(() => (
+        <MockComponent contentString={summarySectionString} />
+    ));
+
+const mockFooterComponent = jest.fn(() => (
+    <MockComponent contentString={'Mock Footer'} />
+));
 
 jest.mock('@/components/Header', () => {
     return {
         Header: (props: any) => mockHeaderComponent(props),
+    };
+});
+
+jest.mock('@/components/SectionSummary', () => {
+    return {
+        SectionSummary: (props: any) => mockSectionSummaryComponent(props),
+    };
+});
+
+jest.mock('@/components/Footer', () => {
+    return {
+        Footer: () => mockFooterComponent(),
     };
 });
 
@@ -41,6 +54,19 @@ describe('<Layout>', () => {
         const loadingHint = queryByText(t('LOADING_TEXT'));
         expect(loadingHint).not.toBeInTheDocument();
         expect(mockFooterComponent).toBeCalledTimes(1);
+    });
+
+    it('renders the resume layout header within the layout', () => {
+        const summaryProp = 'some summary';
+        const mockProps = {
+            basics: { ...MockResumeJsonMax.basics, summary: summaryProp },
+        };
+        const { queryByText } = render(<Layout resumeData={mockProps} />);
+        const sectionSummaryComponent = queryByText(headerSearchString);
+        expect(sectionSummaryComponent).toBeInTheDocument();
+        expect(mockSectionSummaryComponent).toBeCalledWith({
+            summary: summaryProp,
+        });
     });
 
     it('renders the resume layout header within the layout', () => {

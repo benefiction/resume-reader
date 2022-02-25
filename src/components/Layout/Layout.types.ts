@@ -5,6 +5,7 @@ export type LayoutProps = {
             name: string;
             label?: string;
             image?: string;
+            summary?: string;
         };
     };
 };
