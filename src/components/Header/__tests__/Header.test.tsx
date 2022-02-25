@@ -6,15 +6,11 @@ import { Header } from '../';
 const { basics } = MockResumeJsonMax;
 
 describe('<Header>', () => {
-    it('should render the name', () => {
+    it('should render the name and lable', () => {
         const { getByText } = render(<Header basics={basics} />);
 
         const name = getByText(basics.name);
         expect(name).toBeInTheDocument();
-    });
-
-    it('should render the lable', () => {
-        const { getByText } = render(<Header basics={basics} />);
 
         const label = getByText(basics.label);
         expect(label).toBeInTheDocument();

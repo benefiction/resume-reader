@@ -1,5 +1,6 @@
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
+import { SectionContact } from '@/components/SectionContact';
 import { SectionSummary } from '@/components/SectionSummary';
 import { t } from '@/utils/translate';
 import React from 'react';
@@ -24,7 +25,11 @@ export const Layout: React.FC<LayoutProps> = ({
                     <SectionSummary summary={resumeData.basics.summary} />
                 )}
             </main>
-            <aside className={style.aside}>aside</aside>
+            <aside className={style.aside}>
+                {resumeData?.basics && (
+                    <SectionContact basics={resumeData.basics} />
+                )}
+            </aside>
 
             <footer className={style.footer}>
                 <Footer />

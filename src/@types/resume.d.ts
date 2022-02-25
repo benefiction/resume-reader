@@ -1,5 +1,5 @@
 export declare type ResumeJson = {
-    basics: ResumeBasics;
+    basics?: ResumeBasics;
     work?: ResumeWork[];
     volunteer?: ResumeVolunteer[];
     education?: ResumeEducation[];

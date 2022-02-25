@@ -11,6 +11,9 @@ const mockHeaderComponent = jestMockedComponent(headerSearchString);
 const summarySectionString = 'Mock Summary Section Text';
 const mockSectionSummaryComponent = jestMockedComponent(summarySectionString);
 
+const contactSectionString = 'Contact Section';
+const mockSectionContactComponent = jestMockedComponent(contactSectionString);
+
 const mockFooterComponent = jestMockedComponent('Mock Footer');
 
 jest.mock('@/components/Header', () => {
@@ -22,6 +25,12 @@ jest.mock('@/components/Header', () => {
 jest.mock('@/components/SectionSummary', () => {
     return {
         SectionSummary: (props: any) => mockSectionSummaryComponent(props),
+    };
+});
+
+jest.mock('@/components/SectionContact', () => {
+    return {
+        SectionContact: (props: any) => mockSectionContactComponent(props),
     };
 });
 
@@ -46,16 +55,26 @@ describe('<Layout>', () => {
         expect(mockFooterComponent).toBeCalledTimes(1);
     });
 
-    it('renders the resume layout header within the layout', () => {
+    it('renders the summary and contact within the layout', () => {
         const summaryProp = 'some summary';
         const mockProps = {
-            basics: { ...MockResumeJsonMax.basics, summary: summaryProp },
+            basics: {
+                ...MockResumeJsonMax.basics,
+                summary: summaryProp,
+                email: 'github@benefiction.dev',
+            },
         };
         const { queryByText } = render(<Layout resumeData={mockProps} />);
         const sectionSummaryComponent = queryByText(headerSearchString);
         expect(sectionSummaryComponent).toBeInTheDocument();
         expect(mockSectionSummaryComponent).toBeCalledWith({
             summary: summaryProp,
+        });
+
+        const sectionContactComponent = queryByText(contactSectionString);
+        expect(sectionContactComponent).toBeInTheDocument();
+        expect(mockSectionContactComponent).toBeCalledWith({
+            basics: mockProps.basics,
         });
     });
 
