@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 export const MockComponent: React.FC<{ contentString: string }> = ({
     contentString,

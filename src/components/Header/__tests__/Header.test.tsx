@@ -1,6 +1,6 @@
 import { MockResumeJsonMax } from '@/mocks/resumeJsonMax';
 import { render } from '@testing-library/react';
-import * as React from 'react';
+import React from 'react';
 import { Header } from '../';
 
 const { basics } = MockResumeJsonMax;

@@ -1,20 +1,17 @@
-import { MockComponent } from '@/mocks/MockComponent';
+import { jestMockedComponent } from '@/mocks/jestMockComponent';
 import { MockResumeJsonMax } from '@/mocks/resumeJsonMax';
 import { t } from '@/utils/translate';
 import { render } from '@testing-library/react';
-import * as React from 'react';
+import React from 'react';
 import { Layout } from '../';
 
-const mockWithJest = (text) =>
-    jest.fn().mockImplementation(() => <MockComponent contentString={text} />);
-
 const headerSearchString = 'Mock Header';
-const mockHeaderComponent = mockWithJest(headerSearchString);
+const mockHeaderComponent = jestMockedComponent(headerSearchString);
 
 const summarySectionString = 'Mock Summary Section Text';
-const mockSectionSummaryComponent = mockWithJest(summarySectionString);
+const mockSectionSummaryComponent = jestMockedComponent(summarySectionString);
 
-const mockFooterComponent = mockWithJest('Mock Footer');
+const mockFooterComponent = jestMockedComponent('Mock Footer');
 
 jest.mock('@/components/Header', () => {
     return {

@@ -1,16 +1,14 @@
+import { jestMockedComponent } from '@/mocks/jestMockComponent';
 import { MockComponent } from '@/mocks/MockComponent';
 import { render } from '@testing-library/react';
-import * as React from 'react';
+import React from 'react';
 import { ResumeSection } from '../';
 
 const mockComponentTitle = 'BASICS';
 const mockComponentText = 'Test Component';
 
-const mockResumeSectionHeaderComponent: React.FC = jest
-    .fn()
-    .mockImplementation(() => (
-        <MockComponent contentString={mockComponentTitle} />
-    ));
+const mockResumeSectionHeaderComponent =
+    jestMockedComponent(mockComponentTitle);
 
 jest.mock('@/components/ResumeSectionHeader', () => {
     return {

@@ -1,17 +1,13 @@
 import { ResumeJson } from '@/@types/resume';
 import { ResumeProvider } from '@/contexts/ResumeContext';
-import { MockComponent } from '@/mocks/MockComponent';
+import { jestMockedComponent } from '@/mocks/jestMockComponent';
 import { MockResumeJsonMin } from '@/mocks/resumeJsonMin';
 import { render } from '@testing-library/react';
-import * as React from 'react';
+import React from 'react';
 import { Resume } from '../Resume';
 
 const layoutSearchString = 'Mock Layout';
-const mockLayoutComponent: React.FC = jest
-    .fn()
-    .mockImplementation(() => (
-        <MockComponent contentString={layoutSearchString} />
-    ));
+const mockLayoutComponent = jestMockedComponent(layoutSearchString);
 
 const mockFetchFn = jest.fn((callback: (arg0: ResumeJson) => void) =>
     callback(MockResumeJsonMin)
