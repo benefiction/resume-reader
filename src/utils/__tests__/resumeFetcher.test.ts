@@ -5,7 +5,7 @@ const mockCustomLog = jest.fn();
 
 jest.mock('@/utils/logger', () => {
     return {
-        customLog: (...params) => mockCustomLog(...params),
+        customLog: (...params: any) => mockCustomLog(...params),
     };
 });
 

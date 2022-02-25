@@ -1,0 +1,1 @@
+export { ResumeSectionHeader } from './ResumeSectionHeader';
