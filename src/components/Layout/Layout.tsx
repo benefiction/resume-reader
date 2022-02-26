@@ -14,21 +14,18 @@ export const Layout: React.FC<LayoutProps> = ({
     if (isLoading && !resumeData) {
         return <div>{t('LOADING_TEXT')}</div>;
     }
+    const { basics } = resumeData;
 
     return (
         <div className={style.layout}>
             <header className={style.header}>
-                {resumeData?.basics && <Header basics={resumeData.basics} />}
+                {basics && <Header basics={basics} />}
             </header>
             <main className={style.main}>
-                {resumeData?.basics?.summary && (
-                    <SectionSummary summary={resumeData.basics.summary} />
-                )}
+                {basics?.summary && <SectionSummary summary={basics.summary} />}
             </main>
             <aside className={style.aside}>
-                {resumeData?.basics && (
-                    <SectionContact basics={resumeData.basics} />
-                )}
+                {basics && <SectionContact basics={basics} />}
             </aside>
 
             <footer className={style.footer}>
