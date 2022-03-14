@@ -1,7 +1,19 @@
+import { jestMockedComponent } from '@/mocks/jestMockComponent';
 import { render } from '@testing-library/react';
 import React from 'react';
 import { SectionContact } from '../';
 import type { SectionContactProps } from '../SectionContact.types';
+
+const mockProfileListComponentString = 'Mocked ProfileList Component';
+const mockProfileListComponent = jestMockedComponent(
+    mockProfileListComponentString
+);
+
+jest.mock('@/components/ProfileList', () => {
+    return {
+        ProfileList: (props: any) => mockProfileListComponent(props),
+    };
+});
 
 describe('<SectionContact>', () => {
     it('renders the contact section with common data', () => {
@@ -75,5 +87,27 @@ describe('<SectionContact>', () => {
 
         expect(cityEle).toBeInTheDocument();
         expect(regionEle).not.toBeInTheDocument();
+    });
+
+    it('renders the profile list, if available', () => {
+        const mockprops: SectionContactProps = {
+            basics: {
+                profiles: [
+                    {
+                        network: 'Avialto',
+                        username: 'Erlich Bachman',
+                        url: '',
+                    },
+                ],
+            },
+        };
+
+        const { getByText } = render(
+            <SectionContact basics={mockprops.basics} />
+        );
+        expect(getByText(mockProfileListComponentString)).toBeInTheDocument();
+        expect(mockProfileListComponent).toHaveBeenNthCalledWith(1, {
+            profiles: mockprops.basics.profiles,
+        });
     });
 });

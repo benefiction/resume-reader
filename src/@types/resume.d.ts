@@ -29,8 +29,8 @@ export declare type ResumeBasics = {
 // Language: typescript
 // Path: types/resume.d.ts
 export declare type ResumeLocation = {
-    address: string;
-    postalCode: string;
+    address?: string;
+    postalCode?: string;
     city: string;
     countryCode: string;
     region: string;

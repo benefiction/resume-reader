@@ -2,6 +2,7 @@ import iconEmail from '@/assets/contact_email.svg';
 import iconLocation from '@/assets/contact_location.svg';
 import iconPhone from '@/assets/contact_phone.svg';
 import iconWww from '@/assets/contact_www.svg';
+import { ProfileList } from '@/components/ProfileList';
 import { ResumeSection } from '@/components/ResumeSection';
 import { SvgImg } from '@/components/SvgImg';
 import React from 'react';
@@ -22,7 +23,7 @@ export const SectionContact: React.FC<SectionContactProps> = ({ basics }) => {
                             />
                             <a
                                 className={style.email}
-                                href={`mailto:${basics?.email}`}
+                                href={`mailto:${basics.email}`}
                             >
                                 {basics.email}
                             </a>
@@ -49,7 +50,7 @@ export const SectionContact: React.FC<SectionContactProps> = ({ basics }) => {
                         </li>
                     )}
 
-                    {basics?.location?.city && (
+                    {basics.location?.city && (
                         <li className={style.detail}>
                             <SvgImg
                                 src={iconLocation}
@@ -57,19 +58,19 @@ export const SectionContact: React.FC<SectionContactProps> = ({ basics }) => {
                                 title={'Location:'}
                             />
                             <span>
-                                {basics?.location?.address && (
+                                {basics.location.address && (
                                     <span className={style.address_detail}>
-                                        {basics?.location?.address}
+                                        {basics.location.address}
                                     </span>
                                 )}
 
                                 <span className={style.address_detail}>
-                                    {basics?.location?.city}
-                                    {basics?.location?.postalCode
-                                        ? ` ${basics?.location?.postalCode}`
+                                    {basics.location.city}
+                                    {basics.location.postalCode
+                                        ? ` ${basics.location.postalCode}`
                                         : `${
-                                              basics?.location?.countryCode &&
-                                              `, ${basics?.location?.countryCode}`
+                                              basics.location.countryCode &&
+                                              `, ${basics.location.countryCode}`
                                           }`}
                                 </span>
                             </span>
@@ -77,6 +78,8 @@ export const SectionContact: React.FC<SectionContactProps> = ({ basics }) => {
                     )}
                 </ul>
             </address>
+            {console.log('before:', basics.profiles)}
+            {basics.profiles && <ProfileList profiles={basics.profiles} />}
         </ResumeSection>
     );
 };
