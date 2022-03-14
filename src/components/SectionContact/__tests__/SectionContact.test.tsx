@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 import { SectionContact } from '../';
+import type { SectionContactProps } from '../SectionContact.types';
 
 describe('<SectionContact>', () => {
     it('renders the contact section with common data', () => {
@@ -24,19 +25,23 @@ describe('<SectionContact>', () => {
     });
 
     it('renders the adress with postalCode', () => {
-        const mockprops = {
-            location: {
-                address: 'street 5',
-                postalCode: '23323',
-                city: 'Munich',
-                countryCode: 'GER',
-                region: 'Bavaria',
+        const mockprops: SectionContactProps = {
+            basics: {
+                location: {
+                    address: 'street 5',
+                    postalCode: '23323',
+                    city: 'Munich',
+                    countryCode: 'GER',
+                    region: 'Bavaria',
+                },
             },
         };
 
-        const { queryByText } = render(<SectionContact basics={mockprops} />);
+        const { queryByText } = render(
+            <SectionContact basics={mockprops.basics} />
+        );
         const { address, postalCode, city, countryCode, region } =
-            mockprops.location;
+            mockprops.basics.location;
 
         const adressEle = queryByText(address);
         const cityEle = queryByText(`${city} ${postalCode}`);
@@ -50,16 +55,20 @@ describe('<SectionContact>', () => {
     });
 
     it('renders the adress with countryCode as fallback for postalCode', () => {
-        const mockprops = {
-            location: {
-                city: 'Munich',
-                countryCode: 'GER',
-                region: 'Bavaria',
+        const mockprops: SectionContactProps = {
+            basics: {
+                location: {
+                    city: 'Munich',
+                    countryCode: 'GER',
+                    region: 'Bavaria',
+                },
             },
         };
 
-        const { queryByText } = render(<SectionContact basics={mockprops} />);
-        const { city, countryCode, region } = mockprops.location;
+        const { queryByText } = render(
+            <SectionContact basics={mockprops.basics} />
+        );
+        const { city, countryCode, region } = mockprops.basics.location;
 
         const cityEle = queryByText(`${city}, ${countryCode}`);
         const regionEle = queryByText(region);
