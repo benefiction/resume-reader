@@ -1,6 +1,7 @@
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { SectionContact } from '@/components/SectionContact';
+import { SectionLanguages } from '@/components/SectionLanguages';
 import { SectionSummary } from '@/components/SectionSummary';
 import { t } from '@/utils/translate';
 import React from 'react';
@@ -26,6 +27,9 @@ export const Layout: React.FC<LayoutProps> = ({
             </main>
             <aside className={style.aside}>
                 {basics && <SectionContact basics={basics} />}
+                {resumeData.languages && (
+                    <SectionLanguages languages={resumeData.languages} />
+                )}
             </aside>
 
             <footer className={style.footer}>

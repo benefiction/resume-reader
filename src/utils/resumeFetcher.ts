@@ -3,7 +3,7 @@ import { customLog } from '@/utils/logger';
 
 const userBaseUrl = 'https://gist.githubusercontent.com/benefiction';
 const defaultResumePath =
-    '/97a0966005508793dc91a4988d886fb2/raw/4155157230f59f53d301f85934af0fb7fae9788b/resume_reduced.json';
+    '/97a0966005508793dc91a4988d886fb2/raw/8c0466bee97ac87bab34dd141a5d7db6cedc5777/resume_reduced.json';
 
 const resumeUrl = `${userBaseUrl}${defaultResumePath}`;
 

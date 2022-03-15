@@ -78,7 +78,6 @@ export const SectionContact: React.FC<SectionContactProps> = ({ basics }) => {
                     )}
                 </ul>
             </address>
-            {console.log('before:', basics.profiles)}
             {basics.profiles && <ProfileList profiles={basics.profiles} />}
         </ResumeSection>
     );

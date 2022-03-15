@@ -14,6 +14,11 @@ const mockSectionSummaryComponent = jestMockedComponent(summarySectionString);
 const contactSectionString = 'Contact Section';
 const mockSectionContactComponent = jestMockedComponent(contactSectionString);
 
+const sectionLanguagesSearchString = 'Mock SectionLanguages';
+const mockSectionLanguagesComponent = jestMockedComponent(
+    sectionLanguagesSearchString
+);
+
 const mockFooterComponent = jestMockedComponent('Mock Footer');
 
 jest.mock('@/components/Header', () => {
@@ -31,6 +36,12 @@ jest.mock('@/components/SectionSummary', () => {
 jest.mock('@/components/SectionContact', () => {
     return {
         SectionContact: (props: any) => mockSectionContactComponent(props),
+    };
+});
+
+jest.mock('@/components/SectionLanguages', () => {
+    return {
+        SectionLanguages: (props: any) => mockSectionLanguagesComponent(props),
     };
 });
 
@@ -78,7 +89,22 @@ describe('<Layout>', () => {
         });
     });
 
-    it('renders the resume layout header within the layout', () => {
+    it('renders the header within the layout', () => {
+        const mockProps = {
+            basics: MockResumeJsonMax.basics,
+            languages: [{ language: 'lang1', fluency: 'fluent' }],
+        };
+        const { queryByText } = render(<Layout resumeData={mockProps} />);
+        const sectionLanguagesComponent = queryByText(
+            sectionLanguagesSearchString
+        );
+        expect(sectionLanguagesComponent).toBeInTheDocument();
+        expect(mockSectionLanguagesComponent).toBeCalledWith({
+            languages: mockProps.languages,
+        });
+    });
+
+    it('renders the header within the layout', () => {
         const mockProps = { basics: MockResumeJsonMax.basics };
         const { queryByText } = render(<Layout resumeData={mockProps} />);
         const headerComponent = queryByText(headerSearchString);
