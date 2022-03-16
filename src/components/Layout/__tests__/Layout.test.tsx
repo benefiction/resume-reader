@@ -1,5 +1,5 @@
 import { jestMockedComponent } from '@/mocks/jestMockComponent';
-import { MockResumeJsonMax } from '@/mocks/resumeJsonMax';
+import { mockResumeJsonMax } from '@/mocks/resumeJsonMax';
 import { t } from '@/utils/translate';
 import { render } from '@testing-library/react';
 import React from 'react';
@@ -10,6 +10,9 @@ const mockHeaderComponent = jestMockedComponent(headerSearchString);
 
 const summarySectionString = 'Mock Summary Section Text';
 const mockSectionSummaryComponent = jestMockedComponent(summarySectionString);
+
+const workSectionSearchString = 'Mock search Section Text';
+const mockSectionWorkComponent = jestMockedComponent(workSectionSearchString);
 
 const contactSectionString = 'Contact Section';
 const mockSectionContactComponent = jestMockedComponent(contactSectionString);
@@ -33,6 +36,12 @@ jest.mock('@/components/SectionSummary', () => {
     };
 });
 
+jest.mock('@/components/SectionWork', () => {
+    return {
+        SectionWork: (props: any) => mockSectionWorkComponent(props),
+    };
+});
+
 jest.mock('@/components/SectionContact', () => {
     return {
         SectionContact: (props: any) => mockSectionContactComponent(props),
@@ -50,6 +59,8 @@ jest.mock('@/components/Footer', () => {
         Footer: () => mockFooterComponent(),
     };
 });
+
+const { basics, work } = mockResumeJsonMax;
 
 describe('<Layout>', () => {
     it('renders the loader instead of the resume layout in case of no resume data', () => {
@@ -70,7 +81,7 @@ describe('<Layout>', () => {
         const summaryProp = 'some summary';
         const mockProps = {
             basics: {
-                ...MockResumeJsonMax.basics,
+                ...basics,
                 summary: summaryProp,
                 email: 'github@benefiction.dev',
             },
@@ -89,9 +100,22 @@ describe('<Layout>', () => {
         });
     });
 
-    it('renders the header within the layout', () => {
+    it('renders the work section within the layout', () => {
         const mockProps = {
-            basics: MockResumeJsonMax.basics,
+            basics: basics,
+            work,
+        };
+        const { queryByText } = render(<Layout resumeData={mockProps} />);
+        const sectionWorkComponent = queryByText(workSectionSearchString);
+        expect(sectionWorkComponent).toBeInTheDocument();
+        expect(mockSectionWorkComponent).toBeCalledWith({
+            timelineEntrys: work,
+        });
+    });
+
+    it('renders the languages section within the layout', () => {
+        const mockProps = {
+            basics: basics,
             languages: [{ language: 'lang1', fluency: 'fluent' }],
         };
         const { queryByText } = render(<Layout resumeData={mockProps} />);
@@ -105,7 +129,7 @@ describe('<Layout>', () => {
     });
 
     it('renders the header within the layout', () => {
-        const mockProps = { basics: MockResumeJsonMax.basics };
+        const mockProps = { basics: basics };
         const { queryByText } = render(<Layout resumeData={mockProps} />);
         const headerComponent = queryByText(headerSearchString);
         expect(headerComponent).toBeInTheDocument();

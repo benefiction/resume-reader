@@ -1,9 +1,9 @@
-import { MockResumeJsonMax } from '@/mocks/resumeJsonMax';
+import { mockResumeJsonMax } from '@/mocks/resumeJsonMax';
 import { render } from '@testing-library/react';
 import React from 'react';
 import { Header } from '../';
 
-const { basics } = MockResumeJsonMax;
+const { basics } = mockResumeJsonMax;
 
 describe('<Header>', () => {
     it('should render the name and lable', () => {

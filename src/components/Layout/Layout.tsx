@@ -3,6 +3,7 @@ import { Header } from '@/components/Header';
 import { SectionContact } from '@/components/SectionContact';
 import { SectionLanguages } from '@/components/SectionLanguages';
 import { SectionSummary } from '@/components/SectionSummary';
+import { SectionWork } from '@/components/SectionWork';
 import { t } from '@/utils/translate';
 import React from 'react';
 import style from './Layout.module.css';
@@ -24,6 +25,9 @@ export const Layout: React.FC<LayoutProps> = ({
             </header>
             <main className={style.main}>
                 {basics?.summary && <SectionSummary summary={basics.summary} />}
+                {resumeData.work && (
+                    <SectionWork timelineEntrys={resumeData.work} />
+                )}
             </main>
             <aside className={style.aside}>
                 {basics && <SectionContact basics={basics} />}
