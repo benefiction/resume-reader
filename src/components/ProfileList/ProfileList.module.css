@@ -1,50 +1,50 @@
 .profile_list {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 .profile {
-  flex-grow: 0;
-  margin: 0.5rem 0 0 0;
+    flex-grow: 0;
+    margin: 0.5rem 0 0 0;
 }
 
 .profile_link {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  width: fit-content;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: fit-content;
 }
 
 .profile_link:hover {
-  color: var(--color-accent-alternate);
+    color: var(--color-accent-alternate);
 }
 
 .profile_link:hover .icon {
-  filter: invert(46%) sepia(52%) saturate(534%) hue-rotate(44deg)
-    brightness(93%) contrast(85%);
+    filter: invert(46%) sepia(52%) saturate(534%) hue-rotate(44deg)
+        brightness(93%) contrast(85%);
 }
 
 .icon {
-  display: block;
-  height: 24px;
-  margin: 0 0.3rem 0 0;
-  filter: invert(13%) sepia(10%) saturate(579%) hue-rotate(163deg)
-    brightness(95%) contrast(93%);
+    display: block;
+    height: 24px;
+    margin: 0 0.3rem 0 0;
+    filter: invert(13%) sepia(10%) saturate(579%) hue-rotate(163deg)
+        brightness(95%) contrast(93%);
 }
 
 .icon img {
-  width: 24px;
-  height: 24px;
+    width: 24px;
+    height: 24px;
 }
 
 @media print {
-  .profile {
-    display: none;
-  }
+    .profile {
+        display: none;
+    }
 
-  .profile:nth-child(-n + 2) {
-    display: block;
-  }
+    .profile:nth-child(-n + 2) {
+        display: block;
+    }
 }
 
-@media (min-width: 63em) {
+@media (min-width: 75rem) {
 }

@@ -28,7 +28,7 @@
     font-weight: var(--font-weight-light);
 }
 
-@media print, (min-width: 41em) {
+@media print, (min-width: 46rem) {
     .header {
         flex-direction: row;
     }

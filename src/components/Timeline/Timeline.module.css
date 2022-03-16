@@ -10,7 +10,6 @@
 
 .position {
     display: block;
-    direction: rtl;
     text-transform: uppercase;
     margin: 0;
     padding: 0;
@@ -32,6 +31,10 @@
     font-size: var(--font-size-s);
     font-weight: var(--font-weight-light);
     color: var(--color-accent);
+}
+
+.period time:first-child::after {
+    content: ' - ';
 }
 
 .situation_detail {
@@ -67,10 +70,10 @@
     background: var(--color-accent);
 }
 
-@media (min-width: 41em) {
+@media (min-width: 46rem) {
 }
 
-@media (min-width: 63em) {
+@media (min-width: 75rem) {
     .situation_list {
         display: flex;
         flex-flow: row wrap;
@@ -80,6 +83,7 @@
         text-align: right;
         position: relative;
         flex: 1 30%;
+        max-width: 30%;
         border-right: 1px solid var(--color-inferior-alternate);
         margin: 0;
         padding: 0 1rem var(--font-size-xl) 0;
@@ -113,6 +117,10 @@
                 var(--color-inferior-alternate) 1em
             )
             1 100%;
+    }
+
+    .position {
+        direction: rtl;
     }
 
     .situation_detail {

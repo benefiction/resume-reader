@@ -13,7 +13,7 @@
     padding: 0 1rem;
 }
 
-@media print, (min-width: 41em) {
+@media print, (min-width: 46rem) {
     .layout {
         background-color: var(--color-bg-highlight);
         display: flex;
@@ -48,7 +48,7 @@
     }
 }
 
-@media (min-width: 63rem) {
+@media (min-width: 75rem) {
     .layout {
         border: 1px solid rgba(0, 0, 0, 0.09);
         border-radius: 0.3rem;
