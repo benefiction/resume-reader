@@ -25,7 +25,7 @@ jobs:
       - name: Tar files
         run: tar cvfz build.tar.gz dist/
       - name: Upload Buildfiles
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: buildfiles-${{github.sha}}
           path: build.tar.gz

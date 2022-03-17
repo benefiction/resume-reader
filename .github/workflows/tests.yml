@@ -14,7 +14,7 @@ jobs:
       - run: npm ci
       - run: npm run test:ci
       - name: Tmp save test coverage
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: test-cov-${{github.sha}}
           path: coverage/lcov.info
