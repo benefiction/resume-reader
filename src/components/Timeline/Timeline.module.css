@@ -95,7 +95,7 @@
         width: 11px;
         position: absolute;
         right: -6px;
-        top: 1em;
+        top: 1.5rem;
         background-color: var(--color-inferior);
         border: 1px solid var(--color-inferior-alternate);
         border-radius: 50%;

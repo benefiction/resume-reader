@@ -3,7 +3,7 @@
 }
 .language_item {
     display: block;
-    margin-bottom: var(--font-size-xs);
+    margin-bottom: 0.4rem;
 }
 
 .language {
@@ -11,6 +11,6 @@
 
 .fluency {
     white-space: nowrap;
-    color: var(--color-accent-alternate);
+    color: var(--color-accent);
     font-weight: var(--font-weight-light);
 }
