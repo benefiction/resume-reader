@@ -48,7 +48,7 @@ jobs:
           cd dist
           touch .nojekyll
       - name: Push app to gitlab page repo
-        uses: cpina/github-action-push-to-another-repository@v1.3
+        uses: cpina/github-action-push-to-another-repository@v1.4
         env:
           API_TOKEN_GITHUB: ${{ secrets.PAGES_DEPLOY_TOKEN }}
         with:
