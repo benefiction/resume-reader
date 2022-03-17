@@ -36,7 +36,7 @@
         "babel-plugin-css-modules-transform": "1.6.2",
         "jest": "27.5.1",
         "parcel": "2.3.2",
-        "postcss": "8.4.6",
+        "postcss": "8.4.12",
         "postcss-modules": "4.3.1"
     },
     "dependencies": {
