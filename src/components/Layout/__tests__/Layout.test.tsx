@@ -8,16 +8,19 @@ import { Layout } from '../';
 const headerSearchString = 'Mock Header';
 const mockHeaderComponent = jestMockedComponent(headerSearchString);
 
-const summarySectionString = 'Mock Summary Section Text';
+const summarySectionString = 'Mock SectionSummary Text';
 const mockSectionSummaryComponent = jestMockedComponent(summarySectionString);
 
-const workSectionSearchString = 'Mock search Section Text';
+const workSectionSearchString = 'Mock SectionSearch Text';
 const mockSectionWorkComponent = jestMockedComponent(workSectionSearchString);
 
-const contactSectionString = 'Contact Section';
+const awardSectionSearchString = 'Mock SectionAward Text';
+const mockSectionAwardComponent = jestMockedComponent(awardSectionSearchString);
+
+const contactSectionString = 'Mock SectionContact Text';
 const mockSectionContactComponent = jestMockedComponent(contactSectionString);
 
-const sectionLanguagesSearchString = 'Mock SectionLanguages';
+const sectionLanguagesSearchString = 'Mock SectionLanguages Text';
 const mockSectionLanguagesComponent = jestMockedComponent(
     sectionLanguagesSearchString
 );
@@ -54,13 +57,19 @@ jest.mock('@/components/SectionLanguages', () => {
     };
 });
 
+jest.mock('@/components/SectionAwards', () => {
+    return {
+        SectionAwards: (props: any) => mockSectionAwardComponent(props),
+    };
+});
+
 jest.mock('@/components/Footer', () => {
     return {
         Footer: () => mockFooterComponent(),
     };
 });
 
-const { basics, work } = mockResumeJsonMax;
+const { basics, work, awards } = mockResumeJsonMax;
 
 describe('<Layout>', () => {
     it('renders the loader instead of the resume layout in case of no resume data', () => {
@@ -102,7 +111,7 @@ describe('<Layout>', () => {
 
     it('renders the work section within the layout', () => {
         const mockProps = {
-            basics: basics,
+            basics,
             work,
         };
         const { queryByText } = render(<Layout resumeData={mockProps} />);
@@ -110,6 +119,20 @@ describe('<Layout>', () => {
         expect(sectionWorkComponent).toBeInTheDocument();
         expect(mockSectionWorkComponent).toBeCalledWith({
             timelineEntrys: work,
+        });
+    });
+
+    it('renders the award section within the layout', () => {
+        const mockProps = {
+            basics,
+            awards,
+        };
+
+        const { queryByText } = render(<Layout resumeData={mockProps} />);
+        const sectionAwardComponent = queryByText(awardSectionSearchString);
+        expect(sectionAwardComponent).toBeInTheDocument();
+        expect(mockSectionAwardComponent).toBeCalledWith({
+            awards: awards,
         });
     });
 

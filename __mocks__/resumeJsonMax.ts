@@ -26,4 +26,18 @@ export const mockResumeJsonMax: ResumeJson = {
             highlights: ['highlight11', 'highlight12'],
         },
     ],
+    awards: [
+        {
+            title: 'award1',
+            date: 'some date',
+            awarder: 'awarder',
+            summary: 'descriptive summary1',
+        },
+        {
+            title: 'award2',
+            date: 'some date',
+            awarder: 'awarder',
+            summary: 'descriptive summary2',
+        },
+    ],
 };

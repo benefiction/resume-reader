@@ -6,6 +6,7 @@ import { SectionSummary } from '@/components/SectionSummary';
 import { SectionWork } from '@/components/SectionWork';
 import { t } from '@/utils/translate';
 import React from 'react';
+import { SectionAwards } from '../SectionAwards';
 import style from './Layout.module.css';
 import type { LayoutProps } from './Layout.types';
 
@@ -16,7 +17,7 @@ export const Layout: React.FC<LayoutProps> = ({
     if (isLoading && !resumeData) {
         return <div>{t('LOADING_TEXT')}</div>;
     }
-    const { basics } = resumeData;
+    const { basics, languages, awards, work } = resumeData;
 
     return (
         <div className={style.layout}>
@@ -25,15 +26,12 @@ export const Layout: React.FC<LayoutProps> = ({
             </header>
             <main className={style.main}>
                 {basics?.summary && <SectionSummary summary={basics.summary} />}
-                {resumeData.work && (
-                    <SectionWork timelineEntrys={resumeData.work} />
-                )}
+                {work && <SectionWork timelineEntrys={work} />}
             </main>
             <aside className={style.aside}>
                 {basics && <SectionContact basics={basics} />}
-                {resumeData.languages && (
-                    <SectionLanguages languages={resumeData.languages} />
-                )}
+                {languages && <SectionLanguages languages={languages} />}
+                {awards && <SectionAwards awards={awards} />}
             </aside>
 
             <footer className={style.footer}>

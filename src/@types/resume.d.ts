@@ -58,7 +58,12 @@ export declare type ResumeWork = {
 
 export declare type ResumeVolunteer = {};
 export declare type ResumeEducation = {};
-export declare type ResumeAward = {};
+export declare type ResumeAward = {
+    title: string;
+    date: string;
+    awarder: string;
+    summary?: string;
+};
 export declare type ResumePublication = {};
 
 export declare type ResumeSkill = {
