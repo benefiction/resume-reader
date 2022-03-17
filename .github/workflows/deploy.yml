@@ -36,7 +36,7 @@ jobs:
     name: Deploy app to git hub pages
     steps:
       - name: Download buildfiles
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: buildfiles-${{github.sha}}
       - name: Untar files
