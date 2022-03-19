@@ -1,3 +1,4 @@
+import { ResumeJson } from '@/@types/resume';
 import { jestMockedComponent } from '@/mocks/jestMockComponent';
 import { mockResumeJsonMax } from '@/mocks/resumeJsonMax';
 import { t } from '@/utils/translate';
@@ -88,13 +89,14 @@ describe('<Layout>', () => {
 
     it('renders the summary and contact within the layout', () => {
         const summaryProp = 'some summary';
-        const mockProps = {
+        const mockProps: ResumeJson = {
             basics: {
                 ...basics,
                 summary: summaryProp,
                 email: 'github@benefiction.dev',
             },
         };
+
         const { queryByText } = render(<Layout resumeData={mockProps} />);
         const sectionSummaryComponent = queryByText(headerSearchString);
         expect(sectionSummaryComponent).toBeInTheDocument();
@@ -110,10 +112,13 @@ describe('<Layout>', () => {
     });
 
     it('renders the work section within the layout', () => {
-        const mockProps = {
-            basics,
+        const mockProps: ResumeJson = {
+            basics: {
+                name: '',
+            },
             work,
         };
+
         const { queryByText } = render(<Layout resumeData={mockProps} />);
         const sectionWorkComponent = queryByText(workSectionSearchString);
         expect(sectionWorkComponent).toBeInTheDocument();
@@ -123,7 +128,7 @@ describe('<Layout>', () => {
     });
 
     it('renders the award section within the layout', () => {
-        const mockProps = {
+        const mockProps: ResumeJson = {
             basics,
             awards,
         };
@@ -137,8 +142,8 @@ describe('<Layout>', () => {
     });
 
     it('renders the languages section within the layout', () => {
-        const mockProps = {
-            basics: basics,
+        const mockProps: ResumeJson = {
+            basics,
             languages: [{ language: 'lang1', fluency: 'fluent' }],
         };
         const { queryByText } = render(<Layout resumeData={mockProps} />);
@@ -152,7 +157,7 @@ describe('<Layout>', () => {
     });
 
     it('renders the header within the layout', () => {
-        const mockProps = { basics: basics };
+        const mockProps: ResumeJson = { basics: basics };
         const { queryByText } = render(<Layout resumeData={mockProps} />);
         const headerComponent = queryByText(headerSearchString);
         expect(headerComponent).toBeInTheDocument();
