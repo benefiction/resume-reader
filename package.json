@@ -26,7 +26,7 @@
         "@babel/preset-typescript": "7.16.7",
         "@parcel/transformer-svg-react": "2.4.0",
         "@parcel/transformer-typescript-tsc": "2.4.0",
-        "@testing-library/jest-dom": "5.16.2",
+        "@testing-library/jest-dom": "5.16.3",
         "@testing-library/react": "12.1.4",
         "@types/jest": "27.4.1",
         "@types/mocha": "9.1.0",
