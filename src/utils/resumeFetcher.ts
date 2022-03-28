@@ -1,11 +1,12 @@
 import type { ResumeJson } from '@/@types/resume';
+import { getConfigValue } from '@/utils/getConfig';
+import { getUrlParam } from '@/utils/getUrlParam';
 import { customLog } from '@/utils/logger';
-import { getConfigValue } from './getConfig';
 
 const userBaseUrl = getConfigValue('RESUME_BASE_URL');
-const defaultResumePath = getConfigValue('RESUME_DEFAULT_PATH');
+const resumePath = getUrlParam('resumePath') || getConfigValue('RESUME_DEFAULT_PATH');
 
-const resumeUrl = `${userBaseUrl}${defaultResumePath}`;
+const resumeUrl = `${userBaseUrl}${resumePath}`;
 
 export const fetchResume = async (
     onSuccess: (resumeJson: ResumeJson) => void,
