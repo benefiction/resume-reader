@@ -1,4 +1,5 @@
 import { customLog } from '@/utils/logger';
+import { t } from './translate';
 
 export const getUrlParam = (paramKey: string): string | undefined => {
     const queryString = window.location.search;
@@ -13,7 +14,7 @@ export const getUrlParam = (paramKey: string): string | undefined => {
     try {
         return urlParam ? decodeURI(urlParam) : undefined;
     } catch (error) {
-        customLog('URI decoding failed, returning undefined:', error);
+        customLog(t('ERROR_URI_DECODE'), error);
         return undefined;
     }
 };

@@ -1,10 +1,14 @@
 {
-    "FOOTER_REPO_NOTICE": "This page is deployed with github actions, source can be found here",
-    "LOADING_TEXT": "Loading...",
-    "SECTION_HEADER_SUMMARY": "Summary",
-    "SECTION_HEADER_BASICS": "Basics",
-    "SECTION_HEADER_CONTACT": "Contact",
-    "SECTION_HEADER_WORK": "Work experience",
-    "SECTION_HEADER_AWARDS": "Awards",
-    "SECTION_HEADER_LANGUAGES": "Languages"
+  "FOOTER_REPO_NOTICE": "This page is deployed with github actions, source can be found here",
+  "LOADING_TEXT": "Loading...",
+  "SECTION_HEADER_SUMMARY": "Summary",
+  "SECTION_HEADER_BASICS": "Basics",
+  "SECTION_HEADER_CONTACT": "Contact",
+  "SECTION_HEADER_WORK": "Work experience",
+  "SECTION_HEADER_AWARDS": "Awards",
+  "SECTION_HEADER_LANGUAGES": "Languages",
+  "ERROR_FETCH_RESPONSE_FALLBACK": "Fetch resume 'onFailure' Fallback: ",
+  "ERROR_FETCH_RESPONSE_STATUS": "Unexpected Status Code: ",
+  "ERROR_FETCH_RESPONSE_MESSAGE": "Oops, something went wrong during resume fetching",
+  "ERROR_URI_DECODE": "URI decoding failed, returning undefined: "
 }
