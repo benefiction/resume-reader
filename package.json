@@ -24,8 +24,8 @@
         "@babel/preset-env": "7.16.11",
         "@babel/preset-react": "7.16.7",
         "@babel/preset-typescript": "7.16.7",
-        "@parcel/transformer-svg-react": "2.4.0",
-        "@parcel/transformer-typescript-tsc": "2.4.0",
+        "@parcel/transformer-svg-react": "2.4.1",
+        "@parcel/transformer-typescript-tsc": "2.4.1",
         "@testing-library/jest-dom": "5.16.3",
         "@testing-library/react": "12.1.4",
         "@types/jest": "27.4.1",
@@ -35,12 +35,12 @@
         "@types/react-dom": "17.0.14",
         "babel-plugin-css-modules-transform": "1.6.2",
         "jest": "27.5.1",
-        "parcel": "2.4.0",
+        "parcel": "2.4.1",
         "postcss": "8.4.12",
         "postcss-modules": "4.3.1"
     },
     "dependencies": {
-        "@parcel/logger": "2.4.0",
+        "@parcel/logger": "2.4.1",
         "react": "17.0.2",
         "react-dom": "17.0.2",
         "the-new-css-reset": "1.5.1"
