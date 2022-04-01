@@ -1,10 +1,11 @@
-// @ts-ignore
 module.exports = {
-    process() {
-        return 'module.exports = {};';
-    },
-    getCacheKey() {
-        // The output is always the same.
-        return 'fileTransform';
-    },
+  process() {
+    return 'module.exports = {};';
+  },
+  getCacheKey() {
+    // The output is always the same.
+    return 'fileTransform';
+  },
 };
+
+export {};

@@ -11,12 +11,14 @@ const resumeUrl = `${userBaseUrl}${resumePath}`;
 
 export const fetchResume = async (
   onSuccess: (resumeJson: ResumeJson) => void,
-  onFailure: (error: string) => void = (error: string) => customLog(t('ERROR_FETCH_RESPONSE_FALLBACK'), error)
+  onFailure: (error: string) => void = (error: string) =>
+    customLog(t('ERROR_FETCH_RESPONSE_FALLBACK'), error)
 ) => {
   try {
     const response = await fetch(resumeUrl);
 
-    if (response.status !== 200) throw new Error(`${t('ERROR_FETCH_RESPONSE_STATUS')}${response.status}`);
+    if (response.status !== 200)
+      throw new Error(`${t('ERROR_FETCH_RESPONSE_STATUS')}${response.status}`);
 
     const json = await response.json();
     onSuccess(json);

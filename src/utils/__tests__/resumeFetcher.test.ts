@@ -26,19 +26,19 @@ const onFailure = jest.fn();
 describe('fetchResume', () => {
   it('should call onSucess with the response in case of sucess', async () => {
     setMockFetch(200);
-    const resume = await fetchResume(onSuccess, onFailure);
+    await fetchResume(onSuccess, onFailure);
     expect(onSuccess).toHaveBeenCalledWith(MockResumeJsonMin);
   });
 
   it('should call on onFailure in status code case of unexpected status code', async () => {
     setMockFetch(418);
-    const resume = await fetchResume(onSuccess, onFailure);
+    await fetchResume(onSuccess, onFailure);
     expect(onFailure).toHaveBeenCalledWith(`${t('ERROR_FETCH_RESPONSE_STATUS')}418`);
   });
 
   it('should use customLog in case the onFailure callback is missing', async () => {
     setMockFetch(418);
-    const resume = await fetchResume(onSuccess);
+    await fetchResume(onSuccess);
     expect(mockCustomLog).toHaveBeenCalledWith(
       t('ERROR_FETCH_RESPONSE_FALLBACK'),
       `${t('ERROR_FETCH_RESPONSE_STATUS')}418`
@@ -47,14 +47,16 @@ describe('fetchResume', () => {
 
   it('should call on onFailure with default error msg in case of missing error', async () => {
     globalThis.fetch = jest.fn().mockImplementationOnce(() => Promise.reject());
-    const resume = await fetchResume(onSuccess, onFailure);
+    await fetchResume(onSuccess, onFailure);
     expect(onFailure).toHaveBeenCalledWith(t('ERROR_FETCH_RESPONSE_MESSAGE'));
   });
 
   it('should call on onFailure with  error msg in case of error is provided', async () => {
     const mockErrorMsg = 'SORRY - could not connect to your resume';
-    globalThis.fetch = jest.fn().mockImplementationOnce(() => Promise.reject(new Error(mockErrorMsg)));
-    const resume = await fetchResume(onSuccess, onFailure);
+    globalThis.fetch = jest
+      .fn()
+      .mockImplementationOnce(() => Promise.reject(new Error(mockErrorMsg)));
+    await fetchResume(onSuccess, onFailure);
     expect(onFailure).toHaveBeenCalledWith(mockErrorMsg);
   });
 });

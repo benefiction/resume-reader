@@ -56,15 +56,15 @@ export declare type ResumeWork = {
   highlights: string[];
 };
 
-export declare type ResumeVolunteer = {};
-export declare type ResumeEducation = {};
+export declare type ResumeVolunteer = Record<string, never>;
+export declare type ResumeEducation = Record<string, never>;
 export declare type ResumeAward = {
   title: string;
   date: string;
   awarder: string;
   summary?: string;
 };
-export declare type ResumePublication = {};
+export declare type ResumePublication = Record<string, never>;
 
 export declare type ResumeSkill = {
   name: string;

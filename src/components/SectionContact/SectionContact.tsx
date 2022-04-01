@@ -39,7 +39,9 @@ export const SectionContact: React.FC<SectionContactProps> = ({ basics }) => {
             <li className={style.detail}>
               <SvgImg src={iconLocation} styleClass={style.icon} title={'Location:'} />
               <span>
-                {basics.location.address && <span className={style.address_detail}>{basics.location.address}</span>}
+                {basics.location.address && (
+                  <span className={style.address_detail}>{basics.location.address}</span>
+                )}
 
                 <span className={style.address_detail}>
                   {basics.location.city}

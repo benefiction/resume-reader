@@ -30,7 +30,7 @@ describe('ResumeProvider', () => {
   });
 
   it('should render with new value after setResumeJson was called', async () => {
-    const { container, findByText } = render(
+    const { findByText } = render(
       <ResumeProvider>
         <MockConsumerWithUpdate />
       </ResumeProvider>
