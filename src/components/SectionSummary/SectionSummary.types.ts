@@ -1,3 +1,3 @@
 export type SectionSummaryProps = {
-    summary: string;
+  summary: string;
 };

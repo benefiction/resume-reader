@@ -3,9 +3,7 @@ import React from 'react';
 import style from './SectionLanguages.module.css';
 import type { SectionLanguagesProps } from './SectionLanguages.types';
 
-export const SectionLanguages: React.FC<SectionLanguagesProps> = ({
-  languages,
-}) => {
+export const SectionLanguages: React.FC<SectionLanguagesProps> = ({ languages }) => {
   return (
     <ResumeSection title={'languages'}>
       <ul className={style.language_list}>

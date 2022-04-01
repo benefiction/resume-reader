@@ -5,40 +5,38 @@ import React, { useContext, useEffect } from 'react';
 import { ResumeProvider } from '../ResumeContext.provider';
 
 const MockConsumerDefault: React.FC = () => {
-    const { resume } = useContext(ResumeContext);
-    return <div>{`${resume}`}</div>;
+  const { resume } = useContext(ResumeContext);
+  return <div>{`${resume}`}</div>;
 };
 
 const MockConsumerWithUpdate: React.FC = () => {
-    const { setResumeJson, resume } = useContext(ResumeContext);
+  const { setResumeJson, resume } = useContext(ResumeContext);
 
-    useEffect(() => {
-        setResumeJson(MockResumeJsonMin);
-    }, []);
+  useEffect(() => {
+    setResumeJson(MockResumeJsonMin);
+  }, []);
 
-    return <div>{`${JSON.stringify(resume)}`}</div>;
+  return <div>{`${JSON.stringify(resume)}`}</div>;
 };
 
 describe('ResumeProvider', () => {
-    it('should render without undefined as default', () => {
-        const { getByText } = render(
-            <ResumeProvider>
-                <MockConsumerDefault />
-            </ResumeProvider>
-        );
-        expect(getByText('undefined')).toBeInTheDocument();
-    });
+  it('should render without undefined as default', () => {
+    const { getByText } = render(
+      <ResumeProvider>
+        <MockConsumerDefault />
+      </ResumeProvider>
+    );
+    expect(getByText('undefined')).toBeInTheDocument();
+  });
 
-    it('should render with new value after setResumeJson was called', async () => {
-        const { container, findByText } = render(
-            <ResumeProvider>
-                <MockConsumerWithUpdate />
-            </ResumeProvider>
-        );
+  it('should render with new value after setResumeJson was called', async () => {
+    const { container, findByText } = render(
+      <ResumeProvider>
+        <MockConsumerWithUpdate />
+      </ResumeProvider>
+    );
 
-        const updatedResume = await findByText(
-            JSON.stringify(MockResumeJsonMin)
-        );
-        expect(updatedResume).toBeInTheDocument();
-    });
+    const updatedResume = await findByText(JSON.stringify(MockResumeJsonMin));
+    expect(updatedResume).toBeInTheDocument();
+  });
 });

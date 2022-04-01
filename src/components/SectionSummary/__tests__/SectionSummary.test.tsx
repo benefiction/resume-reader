@@ -5,10 +5,10 @@ import { SectionSummary } from '../';
 const mockSummary = 'some random text';
 
 describe('<SectionSummary>', () => {
-    it('renders the component with summary', () => {
-        const { getByText } = render(<SectionSummary summary={mockSummary} />);
+  it('renders the component with summary', () => {
+    const { getByText } = render(<SectionSummary summary={mockSummary} />);
 
-        const summary = getByText(mockSummary);
-        expect(summary).toBeInTheDocument();
-    });
+    const summary = getByText(mockSummary);
+    expect(summary).toBeInTheDocument();
+  });
 });

@@ -6,8 +6,8 @@ import { getProfileIcon } from '@/utils/profileIcoMatcher';
 jest.mock('@/assets/profile_strava.svg', () => 'profile_strava.svg');
 
 describe('getProfileIcon', () => {
-    it('returns the right value for strava', () => {
-        const urlPath = getProfileIcon('strava');
-        expect(urlPath).toBe('profile_strava.svg');
-    });
+  it('returns the right value for strava', () => {
+    const urlPath = getProfileIcon('strava');
+    expect(urlPath).toBe('profile_strava.svg');
+  });
 });

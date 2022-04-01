@@ -4,9 +4,9 @@ import React from 'react';
 interface AppProps {}
 
 export const App = ({}: AppProps) => {
-    return (
-        <ResumeProvider>
-            <Resume />
-        </ResumeProvider>
-    );
+  return (
+    <ResumeProvider>
+      <Resume />
+    </ResumeProvider>
+  );
 };

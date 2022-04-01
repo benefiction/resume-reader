@@ -4,13 +4,11 @@ import { fetchResume } from '@/utils/resumeFetcher';
 import React, { useContext, useEffect } from 'react';
 
 export const Resume: React.FC = () => {
-    const { setResumeJson, resume } = useContext(ResumeContext);
+  const { setResumeJson, resume } = useContext(ResumeContext);
 
-    useEffect(() => {
-        fetchResume(setResumeJson);
-    }, []);
+  useEffect(() => {
+    fetchResume(setResumeJson);
+  }, []);
 
-    return (
-        <Layout isLoading={typeof resume === 'undefined'} resumeData={resume} />
-    );
+  return <Layout isLoading={typeof resume === 'undefined'} resumeData={resume} />;
 };

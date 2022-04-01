@@ -10,33 +10,28 @@ import { SectionAwards } from '../SectionAwards';
 import style from './Layout.module.css';
 import type { LayoutProps } from './Layout.types';
 
-export const Layout: React.FC<LayoutProps> = ({
-    isLoading = true,
-    resumeData,
-}) => {
-    if (isLoading && !resumeData) {
-        return <div>{t('LOADING_TEXT')}</div>;
-    }
-    const { basics, languages, awards, work } = resumeData;
+export const Layout: React.FC<LayoutProps> = ({ isLoading = true, resumeData }) => {
+  if (isLoading && !resumeData) {
+    return <div>{t('LOADING_TEXT')}</div>;
+  }
+  const { basics, languages, awards, work } = resumeData;
 
-    return (
-        <div className={style.layout}>
-            <header className={style.header}>
-                {basics && <Header basics={basics} />}
-            </header>
-            <main className={style.main}>
-                {basics?.summary && <SectionSummary summary={basics.summary} />}
-                {work && <SectionWork timelineEntrys={work} />}
-            </main>
-            <aside className={style.aside}>
-                {basics && <SectionContact basics={basics} />}
-                {languages && <SectionLanguages languages={languages} />}
-                {awards && <SectionAwards awards={awards} />}
-            </aside>
+  return (
+    <div className={style.layout}>
+      <header className={style.header}>{basics && <Header basics={basics} />}</header>
+      <main className={style.main}>
+        {basics?.summary && <SectionSummary summary={basics.summary} />}
+        {work && <SectionWork timelineEntrys={work} />}
+      </main>
+      <aside className={style.aside}>
+        {basics && <SectionContact basics={basics} />}
+        {languages && <SectionLanguages languages={languages} />}
+        {awards && <SectionAwards awards={awards} />}
+      </aside>
 
-            <footer className={style.footer}>
-                <Footer />
-            </footer>
-        </div>
-    );
+      <footer className={style.footer}>
+        <Footer />
+      </footer>
+    </div>
+  );
 };

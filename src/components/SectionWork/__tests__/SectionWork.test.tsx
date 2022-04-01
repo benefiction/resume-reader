@@ -10,18 +10,18 @@ const TimelineString = 'This is the the timeline Component';
 const mockTimelineComponent = jestMockedComponent(TimelineString);
 
 jest.mock('@/components/Timeline', () => {
-    return {
-        Timeline: (props: any) => mockTimelineComponent(props),
-    };
+  return {
+    Timeline: (props: any) => mockTimelineComponent(props),
+  };
 });
 
 describe('<SectionWork />', () => {
-    it('should render', () => {
-        const { queryByText } = render(<SectionWork timelineEntrys={work} />);
-        const timelineComponent = queryByText(TimelineString);
-        expect(timelineComponent).toBeInTheDocument();
-        expect(mockTimelineComponent).toBeCalledWith({
-            timelineEntrys: work,
-        });
+  it('should render', () => {
+    const { queryByText } = render(<SectionWork timelineEntrys={work} />);
+    const timelineComponent = queryByText(TimelineString);
+    expect(timelineComponent).toBeInTheDocument();
+    expect(mockTimelineComponent).toBeCalledWith({
+      timelineEntrys: work,
     });
+  });
 });

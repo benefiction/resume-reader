@@ -6,8 +6,8 @@ import { getProfileIcon } from '@/utils/profileIcoMatcher';
 jest.mock('@/assetsprofile_linkedin.svg', () => 'profile_linkedin.svg');
 
 describe('getProfileIcon', () => {
-    it('returns the right value for linkedin', () => {
-        const urlPath = getProfileIcon('linkedin');
-        expect(urlPath).toBe('profile_linkedin.svg');
-    });
+  it('returns the right value for linkedin', () => {
+    const urlPath = getProfileIcon('linkedin');
+    expect(urlPath).toBe('profile_linkedin.svg');
+  });
 });
