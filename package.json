@@ -7,6 +7,8 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
+    "lint": "eslint . --ext 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "format:lint": "eslint . --ext 'src/**/*.{js,jsx,ts,tsx,json}' --fix",
     "format:prettier": "prettier --config .prettierrc --write 'src/**/*.{js,jsx,ts,tsx,json}'",
     "test": "jest \".*.test.(ts|tsx)\"",
     "test:ci": "jest \".*.test.(ts|tsx)\" --coverage --ci"
@@ -34,7 +36,12 @@
     "@types/node": "17.0.21",
     "@types/react": "17.0.43",
     "@types/react-dom": "17.0.14",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
     "babel-plugin-css-modules-transform": "1.6.2",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "jest": "27.5.1",
     "parcel": "2.4.1",
     "postcss": "8.4.12",
