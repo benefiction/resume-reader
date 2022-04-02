@@ -8,10 +8,15 @@
     "start": "parcel",
     "build": "parcel build",
     "lint": "eslint . --ext 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "format": "npm run format:lint && npm run format:prettier",
     "format:lint": "eslint . --ext 'src/**/*.{js,jsx,ts,tsx,json}' --fix",
     "format:prettier": "prettier --config .prettierrc --write 'src/**/*.{js,jsx,ts,tsx,json}'",
     "test": "jest \".*.test.(ts|tsx)\"",
-    "test:ci": "jest \".*.test.(ts|tsx)\" --coverage --ci"
+    "test:ci": "jest \".*.test.(ts|tsx)\" --coverage --ci",
+    "pre-commit": "lint-staged && npm run test"
+  },
+  "lint-staged": {
+    "*": "npm run format"
   },
   "repository": {
     "type": "git",
@@ -42,7 +47,9 @@
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
     "jest": "27.5.1",
+    "lint-staged": "^12.3.7",
     "parcel": "2.4.1",
     "postcss": "8.4.12",
     "postcss-modules": "4.3.1",

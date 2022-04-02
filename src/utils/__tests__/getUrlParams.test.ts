@@ -7,6 +7,13 @@ Object.defineProperty(window, 'location', {
   writable: true,
 });
 
+const mockCustomLog = jest.fn();
+jest.mock('@/utils/logger', () => {
+  return {
+    customLog: () => mockCustomLog,
+  };
+});
+
 const setMockLocationSearch = (searchQuery) => {
   globalThis.window.location.search = searchQuery;
 };
