@@ -34,7 +34,7 @@
     "@babel/preset-typescript": "7.16.7",
     "@parcel/transformer-svg-react": "2.4.1",
     "@parcel/transformer-typescript-tsc": "2.4.1",
-    "@testing-library/jest-dom": "5.16.3",
+    "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.0.0",
     "@types/jest": "27.4.1",
     "@types/mocha": "9.1.0",
