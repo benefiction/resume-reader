@@ -4,7 +4,7 @@ import iconPhone from '@/assets/contact_phone.svg';
 import iconWww from '@/assets/contact_www.svg';
 import { ProfileList } from '@/components/ProfileList';
 import { ResumeSection } from '@/components/ResumeSection';
-import { SvgImg } from '@/components/SvgImg';
+import { SvgAsMask } from '@/components/SvgAsMask';
 import React from 'react';
 import style from './SectionContact.module.css';
 import type { SectionContactProps } from './SectionContact.types';
@@ -16,7 +16,7 @@ export const SectionContact: React.FC<SectionContactProps> = ({ basics }) => {
         <ul>
           {basics.email && (
             <li className={style.detail}>
-              <SvgImg src={iconEmail} styleClass={style.icon} title={'E-Mail:'} />
+              <SvgAsMask styleClass={style.icon} src={iconEmail} />
               <a className={style.email} href={`mailto:${basics.email}`}>
                 {basics.email}
               </a>
@@ -24,20 +24,20 @@ export const SectionContact: React.FC<SectionContactProps> = ({ basics }) => {
           )}
           {basics.phone && (
             <li className={style.detail}>
-              <SvgImg src={iconPhone} styleClass={style.icon} title={'Phone:'} />
+              <SvgAsMask styleClass={style.icon} src={iconPhone} />
               <a href={`tel:${basics.phone}`}>{basics.phone}</a>
             </li>
           )}
           {basics.website && (
             <li className={style.detail}>
-              <SvgImg src={iconWww} styleClass={style.icon} title={'WWW:'} />
+              <SvgAsMask styleClass={style.icon} src={iconWww} />
               <a href={basics.website}>{basics.website}</a>
             </li>
           )}
 
           {basics.location?.city && (
             <li className={style.detail}>
-              <SvgImg src={iconLocation} styleClass={style.icon} title={'Location:'} />
+              <SvgAsMask styleClass={style.icon} src={iconLocation} />
               <span>
                 {basics.location.address && (
                   <span className={style.address_detail}>{basics.location.address}</span>

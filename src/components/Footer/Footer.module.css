@@ -8,14 +8,21 @@
     var(--color-common) 75%,
     #0000 100%
   );
+  margin: 5rem 0 0;
   padding: 3rem;
   text-align: center;
 }
 
 .link_icon {
-  height: 1rem;
-  margin: 0 0.3rem 0 0;
-  width: auto;
+  height: var(--font-size-m);
+  width: var(--font-size-m);
+  margin: 0;
+  display: inline-block;
+  line-height: 1.1rem;
+}
+
+.link:hover .link_icon {
+  background: var(--color-accent);
 }
 
 .link:hover {

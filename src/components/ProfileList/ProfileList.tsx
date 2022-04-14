@@ -1,4 +1,4 @@
-import { SvgImg } from '@/components/SvgImg';
+import { SvgAsMask } from '@/components/SvgAsMask';
 import { getProfileIcon } from '@/utils/profileIcoMatcher';
 import React from 'react';
 import style from './ProfileList.module.css';
@@ -14,7 +14,7 @@ export const ProfileList: React.FC<ProfileListProps> = ({ profiles }) => {
           profileIconSrc && (
             <li key={profile.network} className={style.profile}>
               <a className={style.profile_link} href={url}>
-                <SvgImg src={profileIconSrc} styleClass={style.icon} title={network} />
+                <SvgAsMask styleClass={style.icon} src={profileIconSrc} title={network} />
                 <span>{username}</span>
               </a>
             </li>
