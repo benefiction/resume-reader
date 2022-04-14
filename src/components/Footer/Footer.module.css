@@ -1,10 +1,30 @@
 .wrapper {
-    padding: 3rem;
-    text-align: center;
+  border-top: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    to left,
+    #0000 0%,
+    var(--color-common) 25%,
+    var(--color-common) 75%,
+    #0000 100%
+  );
+  padding: 3rem;
+  text-align: center;
 }
 
 .link_icon {
-    height: 1rem;
-    margin: 0 0.3rem 0 0;
-    width: auto;
+  height: 1rem;
+  margin: 0 0.3rem 0 0;
+  width: auto;
+}
+
+.link:hover {
+  color: var(--color-accent);
+}
+
+.version_hint {
+  color: var(--color-inferior-alternate);
+  margin: 0.5rem 0 0;
+  text-align: right;
+  font-size: var(--font-size-xs);
 }
