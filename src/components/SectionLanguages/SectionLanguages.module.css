@@ -1,0 +1,16 @@
+.language_list {
+    display: block;
+}
+.language_item {
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.language {
+}
+
+.fluency {
+    white-space: nowrap;
+    color: var(--color-accent);
+    font-weight: var(--font-weight-light);
+}

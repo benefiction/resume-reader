@@ -1,0 +1,22 @@
+html {
+    background-color: var(--color-bg-main);
+}
+
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: var(--color-common);
+    font-size: var(--font-size-m);
+    margin: 0;
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+}
+
+@media print {
+    @page {
+        font-size: 24px;
+        size: 1092px 1544px;
+    }
+}

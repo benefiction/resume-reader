@@ -1,0 +1,37 @@
+.wrapper {
+  border-top: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    to left,
+    #0000 0%,
+    var(--color-common) 25%,
+    var(--color-common) 75%,
+    #0000 100%
+  );
+  margin: 5rem 0 0;
+  padding: 3rem;
+  text-align: center;
+}
+
+.link_icon {
+  height: var(--font-size-m);
+  width: var(--font-size-m);
+  margin: 0;
+  display: inline-block;
+  line-height: 1.1rem;
+}
+
+.link:hover .link_icon {
+  background: var(--color-accent);
+}
+
+.link:hover {
+  color: var(--color-accent);
+}
+
+.version_hint {
+  color: var(--color-inferior-alternate);
+  margin: 0.5rem 0 0;
+  text-align: right;
+  font-size: var(--font-size-xs);
+}

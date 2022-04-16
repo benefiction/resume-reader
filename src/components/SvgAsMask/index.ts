@@ -1,0 +1,1 @@
+export { SvgAsMask } from './SvgAsMask';

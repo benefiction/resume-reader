@@ -1,0 +1,48 @@
+.profile_list {
+  display: flex;
+  flex-direction: column;
+}
+.profile {
+  flex-grow: 0;
+  margin: 0.5rem 0 0 0;
+}
+
+.profile_link {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.profile_link:hover {
+  color: var(--color-accent-alternate);
+}
+
+.profile_link:hover .icon {
+  background-color: var(--color-accent);
+}
+
+.icon {
+  display: block;
+  height: 1.4rem;
+  width: 1.4rem;
+  margin: 0 0.3rem 0 0;
+}
+
+.icon img {
+  width: 24px;
+  height: 24px;
+}
+
+@media print {
+  .profile {
+    display: none;
+  }
+
+  .profile:nth-child(-n + 2) {
+    display: block;
+  }
+}
+
+@media (min-width: 75rem) {
+}

@@ -1,0 +1,1 @@
+export { SectionAwards } from './SectionAwards';

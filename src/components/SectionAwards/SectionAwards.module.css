@@ -1,0 +1,22 @@
+.title {
+    text-transform: uppercase;
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-bold);
+}
+
+.summary {
+    margin: 0.4rem 0;
+}
+
+.awarder {
+    display: block;
+    font-size: var(--font-size-m);
+    color: var(--color-accent);
+}
+
+.date {
+    display: block;
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-light);
+    color: var(--color-accent);
+}

@@ -1,0 +1,10 @@
+.icon {
+  display: inline-block;
+  background: var(--color-common);
+  mask-image: var(--maskUrl);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  text-indent: 100%;
+  white-space: nowrap;
+}
