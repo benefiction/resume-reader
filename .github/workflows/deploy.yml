@@ -53,5 +53,6 @@ jobs:
           personal_token: ${{ secrets.PAGES_DEPLOY_TOKEN }}
           publish_dir: ./dist
           publish_branch: main
+          external_repository: benefiction/benefiction.github.io
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
