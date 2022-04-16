@@ -1,1 +1,0 @@
-export { SectionSummary } from './SectionSummary';

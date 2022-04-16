@@ -1,1 +1,0 @@
-export { ResumeSection } from './ResumeSection';

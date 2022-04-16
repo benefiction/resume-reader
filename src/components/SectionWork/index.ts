@@ -1,1 +1,0 @@
-export { SectionWork } from './SectionWork';

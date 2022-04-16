@@ -1,1 +1,0 @@
-export { SvgAsMask } from './SvgAsMask';

@@ -1,1 +1,0 @@
-export { SvgImg } from './SvgImg';

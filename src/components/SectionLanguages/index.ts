@@ -1,1 +1,0 @@
-export { SectionLanguages } from './SectionLanguages';
