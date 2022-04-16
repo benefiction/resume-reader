@@ -48,12 +48,10 @@ jobs:
           cd dist
           touch .nojekyll
       - name: Push app to gitlab page repo
-        uses: cpina/github-action-push-to-another-repository@v1.4
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.PAGES_DEPLOY_TOKEN }}
-        with:
-          source-directory: 'dist/'
-          destination-github-username: 'benefiction'
-          destination-repository-name: 'benefiction.github.io'
-          user-email: github-actions[bot]@users.noreply.github.com
-          target-branch: main
+        uses: peaceiris/actions-gh-pages@v3
+          with:
+            deploy_key: ${{ secrets.PAGES_DEPLOY_TOKEN }}
+            publish_dir: ./dist
+            publish_branch: main
+            user_name: 'github-actions[bot]'
+            user_email: 'github-actions[bot]@users.noreply.github.com'
