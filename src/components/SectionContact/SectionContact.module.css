@@ -8,6 +8,7 @@
   display: block;
   flex: 0 0 1.2rem;
   max-height: 1.6rem;
+  max-width: 1.2rem;
   background: var(--color-common);
   margin: 0.15rem 0.5rem 0 0;
 }
