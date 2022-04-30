@@ -51,7 +51,7 @@
     "jest": "27.5.1",
     "lint-staged": "12.4.1",
     "parcel": "2.5.0",
-    "postcss": "8.4.12",
+    "postcss": "8.4.13",
     "postcss-modules": "4.3.1",
     "prettier": "2.6.2"
   },
