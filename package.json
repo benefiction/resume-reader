@@ -32,8 +32,8 @@
     "@babel/preset-env": "7.18.2",
     "@babel/preset-react": "7.17.12",
     "@babel/preset-typescript": "7.17.12",
-    "@parcel/transformer-svg-react": "2.6.0",
-    "@parcel/transformer-typescript-tsc": "2.6.0",
+    "@parcel/transformer-svg-react": "2.6.1",
+    "@parcel/transformer-typescript-tsc": "2.6.1",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.3.0",
     "@types/jest": "27.5.2",
@@ -50,13 +50,13 @@
     "husky": "7.0.4",
     "jest": "27.5.1",
     "lint-staged": "12.5.0",
-    "parcel": "2.6.0",
+    "parcel": "2.6.1",
     "postcss": "8.4.14",
     "postcss-modules": "4.3.1",
     "prettier": "2.7.1"
   },
   "dependencies": {
-    "@parcel/logger": "2.6.0",
+    "@parcel/logger": "2.6.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "the-new-css-reset": "1.6.1"
