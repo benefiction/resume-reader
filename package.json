@@ -59,7 +59,7 @@
     "@parcel/logger": "2.7.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "the-new-css-reset": "1.7.2"
+    "the-new-css-reset": "1.7.3"
   },
   "alias": {
     "@/components/*": "./src/components/$1",
