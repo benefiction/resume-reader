@@ -6,7 +6,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.2.0
+      - uses: actions/checkout@v3.3.0
       - name: Test using Node.js
         uses: actions/setup-node@v3
         with:
@@ -26,7 +26,7 @@ jobs:
       CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
     if: github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v3.2.0
+      - uses: actions/checkout@v3.3.0
       - name: Retrieve temp test coverage
         uses: actions/download-artifact@v3
         with:
