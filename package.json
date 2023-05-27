@@ -30,7 +30,7 @@
   "homepage": "https://github.com/benefiction/resume-reader#readme",
   "devDependencies": {
     "@babel/preset-env": "7.22.2",
-    "@babel/preset-react": "7.22.0",
+    "@babel/preset-react": "7.22.3",
     "@babel/preset-typescript": "7.21.5",
     "@parcel/transformer-svg-react": "2.9.0",
     "@parcel/transformer-typescript-tsc": "2.9.0",
