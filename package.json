@@ -29,9 +29,9 @@
   },
   "homepage": "https://github.com/benefiction/resume-reader#readme",
   "devDependencies": {
-    "@babel/preset-env": "7.23.2",
-    "@babel/preset-react": "7.22.15",
-    "@babel/preset-typescript": "7.23.2",
+    "@babel/preset-env": "7.23.8",
+    "@babel/preset-react": "7.23.3",
+    "@babel/preset-typescript": "7.23.3",
     "@parcel/transformer-svg-react": "2.10.1",
     "@parcel/transformer-typescript-tsc": "2.10.1",
     "@testing-library/jest-dom": "5.17.0",
