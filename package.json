@@ -39,8 +39,8 @@
     "@types/jest": "27.5.2",
     "@types/mocha": "9.1.1",
     "@types/node": "17.0.45",
-    "@types/react": "18.2.79",
-    "@types/react-dom": "18.2.25",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.0",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "babel-plugin-css-modules-transform": "1.6.2",
@@ -57,8 +57,8 @@
   },
   "dependencies": {
     "@parcel/logger": "2.12.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "the-new-css-reset": "1.11.2"
   },
   "alias": {
